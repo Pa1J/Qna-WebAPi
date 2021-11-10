@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QnaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ANSWER">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AnsweredBy" Type="Int32" />
+    <Property Name="QuestionId" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AnsweredOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IsBestSolution" Type="Byte" />
+    <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DateModified" Type="DateTime" Precision="0" />
+    <Property Name="DateCreated" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="CATEGEORY">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DateModified" Type="DateTime" Precision="0" />
+    <Property Name="DateCreated" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="LIKED">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LikedBy" Type="Int32" />
+    <Property Name="AnswerId" Type="Int32" />
+    <Property Name="IsLiked" Type="Byte" />
+    <Property Name="LikedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DateModified" Type="DateTime" Precision="0" />
+    <Property Name="DateCreated" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="QUESTION">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionedBy" Type="Int32" />
+    <Property Name="Statement" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CategeoryId" Type="Int32" />
+    <Property Name="QuestionedOn" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IsResolved" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="0" />
+    <Property Name="DateModified" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Department" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DateModified" Type="DateTime" Precision="0" />
+    <Property Name="DateCreated" Type="DateTime" Precision="0" />
+    <Property Name="proPicUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VIEWED">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="QuestionId" Type="Int32" />
+    <Property Name="ViewedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DateModified" Type="DateTime" Precision="0" />
+    <Property Name="DateCreated" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="VOTED">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="QuestionId" Type="Int32" />
+    <Property Name="VotedOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DateModified" Type="DateTime" Precision="0" />
+    <Property Name="DateCreated" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="AnswerView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="AnsweredOn" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AnsweredOn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IsBestSolution" Type="Byte" />
+    <Property Name="AnsweredUserName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="proPicUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Likes" Type="Int32" />
+    <Property Name="Dislikes" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CategoryView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryTagsTotal" Type="Int32" />
+    <Property Name="CategoryTagsWeek" Type="Int32" />
+    <Property Name="CategoryTagsMonth" Type="Int32" />
+  </EntityType>
+  <EntityType Name="QuestionView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Statement" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Statement" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IsResolved" Type="Int32" />
+    <Property Name="QuestionedBy" Type="Int32" />
+    <Property Name="QuestionedOn" Type="DateTime" Precision="0" />
+    <Property Name="proPicUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="votes" Type="Int32" />
+    <Property Name="viewers" Type="Int32" />
+    <Property Name="answers" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Designation" />
+      <PropertyRef Name="Department" />
+      <PropertyRef Name="Location" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Department" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="proPicUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="questionsAsked" Type="Int32" />
+    <Property Name="questionsAnswered" Type="Int32" />
+    <Property Name="questionsSolved" Type="Int32" />
+    <Property Name="likes" Type="Int32" />
+    <Property Name="dislikes" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="QnaDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ANSWERs" EntityType="Self.ANSWER" />
+    <EntitySet Name="CATEGEORies" EntityType="Self.CATEGEORY" />
+    <EntitySet Name="LIKEDs" EntityType="Self.LIKED" />
+    <EntitySet Name="QUESTIONs" EntityType="Self.QUESTION" />
+    <EntitySet Name="USERS" EntityType="Self.USER" />
+    <EntitySet Name="VIEWEDs" EntityType="Self.VIEWED" />
+    <EntitySet Name="VOTEDs" EntityType="Self.VOTED" />
+    <EntitySet Name="AnswerViews" EntityType="Self.AnswerView" />
+    <EntitySet Name="CategoryViews" EntityType="Self.CategoryView" />
+    <EntitySet Name="QuestionViews" EntityType="Self.QuestionView" />
+    <EntitySet Name="UserViews" EntityType="Self.UserView" />
+  </EntityContainer>
+</Schema>

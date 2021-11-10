@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QnaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ANSWER">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AnsweredBy" Type="int" />
+    <Property Name="QuestionId" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="AnsweredOn" Type="date" Nullable="false" />
+    <Property Name="IsBestSolution" Type="tinyint" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="255" />
+    <Property Name="DateModified" Type="date" />
+    <Property Name="DateCreated" Type="date" />
+  </EntityType>
+  <EntityType Name="CATEGEORY">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="255" />
+    <Property Name="DateModified" Type="date" />
+    <Property Name="DateCreated" Type="date" />
+  </EntityType>
+  <EntityType Name="LIKED">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LikedBy" Type="int" />
+    <Property Name="AnswerId" Type="int" />
+    <Property Name="IsLiked" Type="tinyint" />
+    <Property Name="LikedOn" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="255" />
+    <Property Name="DateModified" Type="date" />
+    <Property Name="DateCreated" Type="date" />
+  </EntityType>
+  <EntityType Name="QUESTION">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuestionedBy" Type="int" />
+    <Property Name="Statement" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="CategeoryId" Type="int" />
+    <Property Name="QuestionedOn" Type="date" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="255" />
+    <Property Name="IsResolved" Type="int" />
+    <Property Name="DateCreated" Type="date" />
+    <Property Name="DateModified" Type="date" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Department" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Location" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="255" />
+    <Property Name="DateModified" Type="date" />
+    <Property Name="DateCreated" Type="date" />
+    <Property Name="proPicUrl" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="VIEWED">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="QuestionId" Type="int" />
+    <Property Name="ViewedOn" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="255" />
+    <Property Name="DateModified" Type="date" />
+    <Property Name="DateCreated" Type="date" />
+  </EntityType>
+  <EntityType Name="VOTED">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="QuestionId" Type="int" />
+    <Property Name="VotedOn" Type="date" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="255" />
+    <Property Name="DateModified" Type="date" />
+    <Property Name="DateCreated" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QnaDB.dbo.AnswerView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AnswerView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="AnsweredOn" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="AnsweredOn" Type="date" Nullable="false" />
+    <Property Name="IsBestSolution" Type="tinyint" />
+    <Property Name="AnsweredUserName" Type="varchar" MaxLength="255" />
+    <Property Name="proPicUrl" Type="varchar" MaxLength="255" />
+    <Property Name="Likes" Type="int" />
+    <Property Name="Dislikes" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QnaDB.dbo.CategoryView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CategoryView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="CategoryTagsTotal" Type="int" />
+    <Property Name="CategoryTagsWeek" Type="int" />
+    <Property Name="CategoryTagsMonth" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QnaDB.dbo.QuestionView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="QuestionView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Statement" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Statement" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="IsResolved" Type="int" />
+    <Property Name="QuestionedBy" Type="int" />
+    <Property Name="QuestionedOn" Type="date" />
+    <Property Name="proPicUrl" Type="varchar" MaxLength="255" />
+    <Property Name="votes" Type="int" />
+    <Property Name="viewers" Type="int" />
+    <Property Name="answers" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QnaDB.dbo.UserView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserView">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Designation" />
+      <PropertyRef Name="Department" />
+      <PropertyRef Name="Location" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Designation" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Department" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Location" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="proPicUrl" Type="varchar" MaxLength="255" />
+    <Property Name="questionsAsked" Type="int" />
+    <Property Name="questionsAnswered" Type="int" />
+    <Property Name="questionsSolved" Type="int" />
+    <Property Name="likes" Type="int" />
+    <Property Name="dislikes" Type="int" />
+  </EntityType>
+  <EntityContainer Name="QnaDBModelStoreContainer">
+    <EntitySet Name="ANSWER" EntityType="Self.ANSWER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CATEGEORY" EntityType="Self.CATEGEORY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LIKED" EntityType="Self.LIKED" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QUESTION" EntityType="Self.QUESTION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VIEWED" EntityType="Self.VIEWED" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VOTED" EntityType="Self.VOTED" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnswerView" EntityType="Self.AnswerView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AnswerView].[Id] AS [Id], 
+    [AnswerView].[Description] AS [Description], 
+    [AnswerView].[AnsweredOn] AS [AnsweredOn], 
+    [AnswerView].[IsBestSolution] AS [IsBestSolution], 
+    [AnswerView].[AnsweredUserName] AS [AnsweredUserName], 
+    [AnswerView].[proPicUrl] AS [proPicUrl], 
+    [AnswerView].[Likes] AS [Likes], 
+    [AnswerView].[Dislikes] AS [Dislikes]
+    FROM [dbo].[AnswerView] AS [AnswerView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CategoryView" EntityType="Self.CategoryView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CategoryView].[Id] AS [Id], 
+    [CategoryView].[Name] AS [Name], 
+    [CategoryView].[Description] AS [Description], 
+    [CategoryView].[CategoryTagsTotal] AS [CategoryTagsTotal], 
+    [CategoryView].[CategoryTagsWeek] AS [CategoryTagsWeek], 
+    [CategoryView].[CategoryTagsMonth] AS [CategoryTagsMonth]
+    FROM [dbo].[CategoryView] AS [CategoryView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="QuestionView" EntityType="Self.QuestionView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [QuestionView].[Id] AS [Id], 
+    [QuestionView].[Statement] AS [Statement], 
+    [QuestionView].[Description] AS [Description], 
+    [QuestionView].[IsResolved] AS [IsResolved], 
+    [QuestionView].[QuestionedBy] AS [QuestionedBy], 
+    [QuestionView].[QuestionedOn] AS [QuestionedOn], 
+    [QuestionView].[proPicUrl] AS [proPicUrl], 
+    [QuestionView].[votes] AS [votes], 
+    [QuestionView].[viewers] AS [viewers], 
+    [QuestionView].[answers] AS [answers]
+    FROM [dbo].[QuestionView] AS [QuestionView]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserView" EntityType="Self.UserView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserView].[Id] AS [Id], 
+    [UserView].[Name] AS [Name], 
+    [UserView].[Designation] AS [Designation], 
+    [UserView].[Department] AS [Department], 
+    [UserView].[Location] AS [Location], 
+    [UserView].[proPicUrl] AS [proPicUrl], 
+    [UserView].[questionsAsked] AS [questionsAsked], 
+    [UserView].[questionsAnswered] AS [questionsAnswered], 
+    [UserView].[questionsSolved] AS [questionsSolved], 
+    [UserView].[likes] AS [likes], 
+    [UserView].[dislikes] AS [dislikes]
+    FROM [dbo].[UserView] AS [UserView]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

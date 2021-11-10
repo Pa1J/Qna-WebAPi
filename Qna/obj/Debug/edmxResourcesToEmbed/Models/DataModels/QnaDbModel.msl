@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QnaDBModelStoreContainer" CdmEntityContainer="QnaDBEntities">
+    <EntitySetMapping Name="ANSWERs">
+      <EntityTypeMapping TypeName="QnaDBModel.ANSWER">
+        <MappingFragment StoreEntitySet="ANSWER">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AnsweredBy" ColumnName="AnsweredBy" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AnsweredOn" ColumnName="AnsweredOn" />
+          <ScalarProperty Name="IsBestSolution" ColumnName="IsBestSolution" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CATEGEORies">
+      <EntityTypeMapping TypeName="QnaDBModel.CATEGEORY">
+        <MappingFragment StoreEntitySet="CATEGEORY">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LIKEDs">
+      <EntityTypeMapping TypeName="QnaDBModel.LIKED">
+        <MappingFragment StoreEntitySet="LIKED">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LikedBy" ColumnName="LikedBy" />
+          <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+          <ScalarProperty Name="IsLiked" ColumnName="IsLiked" />
+          <ScalarProperty Name="LikedOn" ColumnName="LikedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QUESTIONs">
+      <EntityTypeMapping TypeName="QnaDBModel.QUESTION">
+        <MappingFragment StoreEntitySet="QUESTION">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="QuestionedBy" ColumnName="QuestionedBy" />
+          <ScalarProperty Name="Statement" ColumnName="Statement" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CategeoryId" ColumnName="CategeoryId" />
+          <ScalarProperty Name="QuestionedOn" ColumnName="QuestionedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsResolved" ColumnName="IsResolved" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="QnaDBModel.USER">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="proPicUrl" ColumnName="proPicUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VIEWEDs">
+      <EntityTypeMapping TypeName="QnaDBModel.VIEWED">
+        <MappingFragment StoreEntitySet="VIEWED">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="ViewedOn" ColumnName="ViewedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VOTEDs">
+      <EntityTypeMapping TypeName="QnaDBModel.VOTED">
+        <MappingFragment StoreEntitySet="VOTED">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="VotedOn" ColumnName="VotedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnswerViews">
+      <EntityTypeMapping TypeName="QnaDBModel.AnswerView">
+        <MappingFragment StoreEntitySet="AnswerView">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AnsweredOn" ColumnName="AnsweredOn" />
+          <ScalarProperty Name="IsBestSolution" ColumnName="IsBestSolution" />
+          <ScalarProperty Name="AnsweredUserName" ColumnName="AnsweredUserName" />
+          <ScalarProperty Name="proPicUrl" ColumnName="proPicUrl" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="Dislikes" ColumnName="Dislikes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryViews">
+      <EntityTypeMapping TypeName="QnaDBModel.CategoryView">
+        <MappingFragment StoreEntitySet="CategoryView">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CategoryTagsTotal" ColumnName="CategoryTagsTotal" />
+          <ScalarProperty Name="CategoryTagsWeek" ColumnName="CategoryTagsWeek" />
+          <ScalarProperty Name="CategoryTagsMonth" ColumnName="CategoryTagsMonth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionViews">
+      <EntityTypeMapping TypeName="QnaDBModel.QuestionView">
+        <MappingFragment StoreEntitySet="QuestionView">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Statement" ColumnName="Statement" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsResolved" ColumnName="IsResolved" />
+          <ScalarProperty Name="QuestionedBy" ColumnName="QuestionedBy" />
+          <ScalarProperty Name="QuestionedOn" ColumnName="QuestionedOn" />
+          <ScalarProperty Name="proPicUrl" ColumnName="proPicUrl" />
+          <ScalarProperty Name="votes" ColumnName="votes" />
+          <ScalarProperty Name="viewers" ColumnName="viewers" />
+          <ScalarProperty Name="answers" ColumnName="answers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserViews">
+      <EntityTypeMapping TypeName="QnaDBModel.UserView">
+        <MappingFragment StoreEntitySet="UserView">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="proPicUrl" ColumnName="proPicUrl" />
+          <ScalarProperty Name="questionsAsked" ColumnName="questionsAsked" />
+          <ScalarProperty Name="questionsAnswered" ColumnName="questionsAnswered" />
+          <ScalarProperty Name="questionsSolved" ColumnName="questionsSolved" />
+          <ScalarProperty Name="likes" ColumnName="likes" />
+          <ScalarProperty Name="dislikes" ColumnName="dislikes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
